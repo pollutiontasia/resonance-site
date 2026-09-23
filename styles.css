@@ -191,6 +191,7 @@ section.block.cream { background: var(--cream); }
   margin-bottom: clamp(40px, 6vw, 80px);
   align-items: start;
 }
+.block-head:not(:has(.num)) { grid-template-columns: 1fr; }
 .block-head .num {
   font-family: var(--mono);
   font-size: 11px;
@@ -506,14 +507,32 @@ section.block.cream { background: var(--cream); }
 .person .bio p { margin: 0; font-family: var(--sans); font-size: 15px; line-height: 1.55; color: var(--body); }
 .person .bio em { font-style: italic; color: var(--ink); }
 
-/* ------- §06 contact ------- */
+/* ------- §06 work with us ------- */
+.work-body{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,64px)}
+.work-body .col{max-width:64ch}
+.work-sub{font-family:var(--serif);font-weight:700;font-size:clamp(20px,1.8vw,26px);line-height:1.25;color:var(--ink);letter-spacing:-0.005em;margin:0 0 14px;max-width:none;white-space:nowrap}
+.work-sub-note{font-weight:400;color:var(--slate)}
+.work-body p{margin:0;font-size:18px;line-height:1.65;color:var(--body)}
+.roles{margin-top:clamp(48px,6vw,80px);display:block}
+.roles .work-sub{font-weight:400;font-size:clamp(26px,2.8vw,36px);line-height:1.15;letter-spacing:-0.01em;margin-bottom:22px}
+.role-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.role-item{display:flex;align-items:baseline;justify-content:space-between;gap:24px;padding:18px 0;border-top:1px solid var(--cobalt-20)}
+.role-item:last-child{border-bottom:1px solid var(--cobalt-20)}
+.role-name{font-family:var(--serif);font-weight:700;font-size:clamp(19px,1.7vw,24px);line-height:1.2;color:var(--ink);letter-spacing:-0.005em}
+.role-note{font-family:var(--sans);font-weight:400;font-size:13px;color:var(--slate);letter-spacing:0;margin-left:8px}
+.role-link{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cobalt);white-space:nowrap;border-bottom:1px solid var(--orange);padding-bottom:3px;transition:color .15s ease}
+.role-link:hover{color:var(--ink)}
+.role-soon{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate);white-space:nowrap}
+
+/* ------- §07 contact ------- */
 .contact {
   background: var(--ink);
   color: var(--warm);
   position: relative;
   overflow: hidden;
 }
-.contact .block-head .num { background-color: var(--ink); }
+.contact .block-head:not(:has(.num)) { grid-template-columns: 1fr; }
+.block-head .num { background-color: var(--ink); }
 .contact .block-head .num::before { background: var(--orange); }
 .contact .block-head .title { color: var(--warm); }
 
@@ -619,7 +638,8 @@ section.block.cream { background: var(--cream); }
   .nav.is-open .nav-links a { padding: 14px 0; border-bottom: 1px solid var(--cobalt-08); font-size: 16px; }
 
   .block-head { grid-template-columns: 1fr; gap: 16px; }
-  .block-head .num { padding-top: 0; }
+  .block-head:not(:has(.num)) { grid-template-columns: 1fr; }
+.block-head .num { padding-top: 0; }
   .theory-body { grid-template-columns: 1fr; }
   .cohort-grid { grid-template-columns: 1fr; }
   .cohort-divider { grid-template-columns: 1fr; }
@@ -627,6 +647,8 @@ section.block.cream { background: var(--cream); }
   .results-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .results-frame, .results-methodology { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
+  .work-sub { white-space: normal; }
+  .role-item { flex-direction: column; align-items: flex-start; gap: 8px; }
   .stat-ring { max-width: 240px; }
 }
 
